@@ -629,6 +629,167 @@ symsum
 
 
 
+## 数值微分
+
+![image-20210207101948909](work.assets/image-20210207101948909.png)
+
+
+## 数值积分
+
+![image-20210207103338554](work.assets/image-20210207103338554.png)
+
+
+
+随着步距降低，误差减少
+
+theoritically
+1/15
+
+   0.100000000000000   0.053891751500759   0.012774915165907
+   0.010000000000000   0.066541695465838   0.000124971200828
+   0.001000000000000   0.066665416680037   0.000001249986629
+   0.000100000000000   0.066666654166669   0.000000012499998
+   0.000010000000000   0.066666666541667   0.000000000125000
+   0.000001000000000   0.066666666665417   0.000000000001250
+
+![image-20210207104352512](work.assets/image-20210207104352512.png)
+
+
+
+![image-20210207104601906](work.assets/image-20210207104601906.png)
+
+## Newton-Cotes
+
+![image-20210207105021846](work.assets/image-20210207105021846.png)
+
+
+
+## 双重积分
+
+![image-20210207105108915](work.assets/image-20210207105108915.png)
+
+![image-20210207105129678](work.assets/image-20210207105129678.png)
+
+
+
+
+
+![image-20210207105432003](work.assets/image-20210207105432003.png)
+
+
+
+
+## 第一曲面积分
+
+![image-20210207110522290](work.assets/image-20210207110522290.png)
+$$
+\frac{{\pi}^2\, \left(a\, \sqrt{a^2 + 1} - \mathop{\mathrm{arcsinh}}\nolimits\!\left(a\right) + 2\, a^3\, \sqrt{a^2 + 1}\right)}{8}
+$$
+
+## 第二曲面积分
+
+![image-20210207110822320](work.assets/image-20210207110822320.png)
+
+
+
+$$
+\frac{2\, \pi\, a^3\, b\, c}{5}
+$$
+![image-20210207111100346](work.assets/image-20210207111100346.png)
+
+![image-20210207111109857](work.assets/image-20210207111109857.png)
+
+## 作业
+
+* f1
+$$
+\frac{x^2\, y + x\, y^3}{{\left(x + y\right)}^3}
+$$
+* limit of f1
+$$
+-6
+$$
+* f2
+$$
+\frac{x\, y}{\sqrt{x\, y + 1} - 1}
+$$
+* limit of f2
+$$
+2
+$$
+* f3
+$$
+-\frac{\mathrm{e}^{ - x^2 - y^2}\, \left(\cos\!\left(x^2 + y^2\right) - 1\right)}{x^2 + y^2}
+$$
+* limit of f3
+$$
+0
+$$
+
+
+
+
+
+
+
+* y1
+$$
+\sqrt{x\, \sin\!\left(x\right)\, \sqrt{1 - \mathrm{e}^{x}}}
+$$
+* gradient of y1
+$$
+\frac{\sin\!\left(x\right)\, \sqrt{1 - \mathrm{e}^{x}} + x\, \cos\!\left(x\right)\, \sqrt{1 - \mathrm{e}^{x}} - \frac{x\, \mathrm{e}^{x}\, \sin\!\left(x\right)}{2\, \sqrt{1 - \mathrm{e}^{x}}}}{2\, \sqrt{x\, \sin\!\left(x\right)\, \sqrt{1 - \mathrm{e}^{x}}}}
+$$
+* y2
+$$
+\sqrt{\frac{\left(x - 1\right)\, \left(x - 2\right)}{\left(x - 3\right)\, \left(x - 4\right)}}
+$$
+* gradient of y2
+$$
+\frac{\frac{x - 1}{\left(x - 3\right)\, \left(x - 4\right)} + \frac{x - 2}{\left(x - 3\right)\, \left(x - 4\right)} - \frac{\left(x - 1\right)\, \left(x - 2\right)}{\left(x - 3\right)\, {\left(x - 4\right)}^2} - \frac{\left(x - 1\right)\, \left(x - 2\right)}{{\left(x - 3\right)}^2\, \left(x - 4\right)}}{2\, \sqrt{\frac{\left(x - 1\right)\, \left(x - 2\right)}{\left(x - 3\right)\, \left(x - 4\right)}}}
+$$
+* f
+$$
+\arctan\!\left(\frac{y}{x}\right) - \mathrm{log}\!\left(x^2 + y^2\right)
+$$
+* gradient of f
+$$
+-\frac{\frac{2\, x}{x^2 + y^2} + \frac{y}{x^2\, \left(\frac{y^2}{x^2} + 1\right)}}{\frac{1}{x\, \left(\frac{y^2}{x^2} + 1\right)} - \frac{2\, y}{x^2 + y^2}}
+$$
+* y
+$$
+-\frac{\mathrm{log}\!\left(\frac{a + x^n}{x^n}\right)}{a\, n}
+$$
+* gradient of y
+
+$$
+-\frac{x^n\, \left(\frac{n\, x^{n - 1}}{x^n} - \frac{n\, \left(a + x^n\right)}{x^{n + 1}}\right)}{a\, n\, \left(a + x^n\right)}
+$$
+
+
+
+
+
+### 17
+
+* component1
+$$
+\frac{1}{\left(5\, n + 1\right)\, \left(5\, n - 4\right)}
+$$
+* Sum1
+$$
+\frac{N}{5\, N + 1}
+$$
+* component2
+$$
+2^{- n} + 3^{- n}
+$$
+* Sum2
+
+$$
+\frac{3}{2} - \frac{{\left(\frac{1}{3}\right)}^N}{2} - {\left(\frac{1}{2}\right)}^N
+$$
+
 
 
 

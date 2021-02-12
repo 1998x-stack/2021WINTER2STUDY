@@ -278,9 +278,208 @@ s2=sum(1./((3*m-2).*(3*m+1)));
 format long
 disp(s2)
 
+%%
+%二元函数梯度计算
+
+[x,y]=meshgrid(-3:0.1:3,-2:0.1:2);
+z=(x.^2-2*x).*exp(-x.^2-y.^2-x.*y);
+[fx,fy]=gradient(z);
+fx=fx/0.2;
+fy=fy/0.2;
+contour(x,y,z,30);
+hold on
+quiver(x,y,fx,fy)
+
+%%
+%积分问题
+x1=[0:0.01:pi]';
+y=[sin(x1) cos(x1) sin(x1/2)];
+x=[x1 x1 x1];
+S=sum((2*y(1:end-1,:)+diff(y)).*diff(x))/2;
+disp(S)
+disp(trapz(x1,y))
+%%
+x=[0:0.01:3*pi/2,3*pi/2];
+y=cos(15*x);
+plot(x,y);
+
+syms x
+A=int(cos(15*x),0,3*pi/2);
+disp('theoritically')
+disp(A)
+h0=[0.1,0.01,0.001,0.0001,0.00001,0.000001];
+v=[];
+for h=h0
+    x=[0:h:3*pi/2,3*pi/2];
+    y=cos(15*x);
+    I=trapz(x,y);
+    v=[v;h,I,1/15-I];
+end
+format long
+disp(v)
+
+%%
+% inline quad
+
+f=inline('2/sqrt(pi)*exp(-x.^2)','x');
+y=quadl(f,0,1.5);
+disp(y)
+%%
+%双重积分
+% fh=inline('sqrt(1-x.^2/2)','x');%内积分上限
+% fl=inline('-sqrt(1-x.^2/2)','x');%内积分下限
+% 
+% f=inline('exp(-x.^2/3).*sin(x.^2+y)','y','x');% 交换顺序的被积函数
+% 
+% 
+% y=quad2dggen(f,fl,fh,-1/2,1,eps);
+% disp(y)
+
+%%
+%第一曲面积分
+syms u v
+syms a positive
+
+x=u*cos(v);
+y=u*sin(v);
+z=v;
+f=x^2*y+z*y^2;
+E=simplify(diff(x,u)^2+diff(y,u)^2+diff(z,u)^2);
+F=diff(x,u)*diff(x,v)+diff(y,u)*diff(y,v)+diff(z,u)*diff(z,v);
+G=simplify(diff(x,v)^2+diff(y,v)^2+diff(z,v)^2);
+I=int(int(f*sqrt(E*G-F^2),u,0,a),v,0,2*pi);
+disp(I);
+disp(latex(I))
+
+%%
+%第二曲面积分
+syms u v
+syms a b c positive
+x=a*sin(u)*cos(v);
+y=b*sin(u)*sin(v);
+z=c*cos(u);
+A=diff(y,u)*diff(z,v)-diff(z,u)*diff(y,v);
+I=int(int(x^3*A,u,0,pi/2),v,0,2*pi);
+disp(I)
+disp(latex(I))
+
+%%
+% example
+
+%% 
+% 2
+syms x y
+f1=(x^2*y+x*y^3)/(x+y)^3;
+l1=limit(limit(f1,x,-1),y,2);
+disp('* f1')
+disp('$$')
+disp(latex(f1))
+disp('$$')
+disp('* limit of f1')
+disp('$$')
+disp(latex(l1))
+disp('$$')
+
+f2=x*y/(sqrt(x*y+1)-1);
+l2=limit(limit(f2,x,0),y,0);
+disp('* f2')
+disp('$$')
+disp(latex(f2))
+disp('$$')
+disp('* limit of f2')
+disp('$$')
+disp(latex(l2))
+disp('$$')
 
 
+f3=(1-cos(x^2+y^2))/(x^2+y^2)/exp(x^2+y^2);
+l3=limit(limit(f3,x,0),y,0);
+disp('* f3')
+disp('$$')
+disp(latex(f3))
+disp('$$')
+disp('* limit of f3')
+disp('$$')
+disp(latex(l3))
+disp('$$')
 
+%%
+%3
+clc
+syms x
+y1=sqrt(x*sin(x)*sqrt(1-exp(x)));
+dy1=diff(y1,x);
+disp('* y1')
+disp('$$')
+disp(latex(y1))
+disp('$$')
+disp('* gradient of y1')
+disp('$$')
+disp(latex(dy1))
+disp('$$')
+
+
+y2=sqrt((x-1)*(x-2)/(x-3)/(x-4));
+dy2=diff(y2,x);
+disp('* y2')
+disp('$$')
+disp(latex(y2))
+disp('$$')
+disp('* gradient of y2')
+disp('$$')
+disp(latex(dy2))
+disp('$$')
+
+
+syms x y
+f=atan(y/x)-log(x^2+y^2);
+dfdx=diff(f,x);
+dfdy=diff(f,y);
+dydx=dfdx/dfdy;
+disp('* f')
+disp('$$')
+disp(latex(f))
+disp('$$')
+disp('* gradient of f')
+disp('$$')
+disp(latex(dydx))
+disp('$$')
+
+syms a x n
+
+y=-1/n/a*log((x^n+a)/x^n);
+dy=diff(y,x);
+disp('* y')
+disp('$$')
+disp(latex(y))
+disp('$$')
+disp('* gradient of y')
+disp('$$')
+disp(latex(dy))
+disp('$$')
+
+%%
+%17
+clc
+syms n N
+f1=symsum(1/(5*n-4)/(5*n+1),1,N);
+disp('* component1')
+disp('$$')
+disp(latex(1/(5*n-4)/(5*n+1)))
+disp('$$')
+disp('* Sum1')
+disp('$$')
+disp(latex(f1))
+disp('$$')
+f2=symsum(1/2^n+1/3^n,1,N);
+disp('* component2')
+disp('$$')
+disp(latex(1/2^n+1/3^n))
+disp('$$')
+disp('* Sum2')
+disp('$$')
+disp(latex(f2))
+disp('$$')
 
 
 
