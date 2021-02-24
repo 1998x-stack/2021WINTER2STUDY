@@ -15,3 +15,47 @@
   * 首先在群体中随机选择一个个体，对于选中的个体以一定概率随机改变串结构中某个串的值。
 
 <img src="work.assets/image-20210224150116693.png" alt="image-20210224150116693" style="zoom:33%;" />
+
+<img src="work.assets/image-20210224150554290.png" alt="image-20210224150554290" style="zoom:33%;" />
+
+
+
+## crtbp
+
+
+
+## ranking
+
+* ranking(ObjV)
+
+  * 列向量从小到大的顺序对个体进行排序，并返回个体适应度值的列向量
+
+* ranking(ObjV,RFun)
+
+  * ![image-20210224155048480](work.assets/image-20210224155048480.png)
+  * ![image-20210224155056763](work.assets/image-20210224155056763.png)
+
+  
+
+* ranking(ObjV,RFun,SUBPOP)
+
+![image-20210224155126832](work.assets/image-20210224155126832.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
