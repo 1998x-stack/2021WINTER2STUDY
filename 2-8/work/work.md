@@ -703,11 +703,55 @@ the default value of the optimality tolerance.
 
 
 
+### 二次型规划
+
+![image-20210212101618870](work.assets/image-20210212101618870.png)
+
+
+
+### 一般非线性规划问题的求解
+
+
+
+![image-20210212101724370](work.assets/image-20210212101724370.png)
+
+
+
+![image-20210212101929915](work.assets/image-20210212101929915.png)
+
+
+
+## 整数规划
+
+### ipslv_mex
+
+![image-20210212102028685](work.assets/image-20210212102028685.png)
 
 
 
 
 
+
+
+![image-20210212102101582](work.assets/image-20210212102101582.png)
+
+
+
+
+
+![image-20210212102125749](work.assets/image-20210212102125749.png)
+
+
+
+# 微分方程的计算机求解
+
+
+
+![image-20210212102316448](work.assets/image-20210212102316448.png)
+
+
+
+![image-20210212102447848](work.assets/image-20210212102447848.png)
 
 
 
