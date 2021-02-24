@@ -1,1 +1,0 @@
-syms x y; f=x^2+x*y/3; P=int(int(f,x,0,1/2),y,0,1/2)

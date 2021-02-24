@@ -1,1 +1,0 @@
-syms x a b; f=x*(1+a/x)^x*sin(b/x); L=limit(f,x,inf)
