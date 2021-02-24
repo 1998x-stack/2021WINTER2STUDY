@@ -19,6 +19,21 @@ A=[10 -7 0;
 
 %%
 
+u=-1:0.1:4;
+x=[0.2 0.9 1.4 2];
+y=x.^1.3;
+v=polyinterp(x,y,u);
+yu=u.^1.3;
+plot(x,y,'o',u,v,'-',u,yu,'r:')
+%%
+syms u
+x=[0.2 0.9 1.4 2];
+y=x.^2;
+v=polyinterp(x,y,u);
+vpa(v,3)
+pretty(v)
+simplify(v)
+%%
 
 
 
